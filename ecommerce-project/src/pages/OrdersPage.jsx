@@ -54,7 +54,7 @@ const OrdersPage = () => {
               </div>
 
               <div className="product-actions">
-                <Link to="tracking">
+                <Link to="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
@@ -83,7 +83,7 @@ const OrdersPage = () => {
               </div>
 
               <div className="product-actions">
-                <Link to="tracking">
+                <Link to="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
@@ -132,7 +132,7 @@ const OrdersPage = () => {
               </div>
 
               <div className="product-actions">
-                <Link to="tracking">
+                <Link to="/tracking">
                   <button className="track-package-button button-secondary">
                     Track package
                   </button>
