@@ -4,6 +4,7 @@ import "./HomePage.css";
 const HomePage = () => {
   return (
     <>
+      <link rel="icon" type="image/svg+xml" href="/home-favicon.png" />
       <title>Ecomerce Project</title>
 
       <Header />

@@ -105,3 +105,18 @@ select:focus,
 input:focus {
   outline: 2px solid rgb(25, 135, 84);
 }
+
+.notFound {
+  display: flex;
+  justify-content: center;
+}
+
+.notFound img {
+  width: 80%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  opacity: 0.95;
+}
