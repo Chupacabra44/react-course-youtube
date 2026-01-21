@@ -10,7 +10,6 @@ import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
-  console.log(cart);
 
   useEffect(() => {
     axios.get("/api/cart-items?expand=product").then((response) => {
