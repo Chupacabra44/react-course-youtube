@@ -4,7 +4,15 @@ import logo from "../../assets/images/logo.png";
 import logoMobile from "../../assets/images/mobile-logo.png";
 import checkoutLockIcon from "../../assets/images/icons/checkout-lock-icon.png";
 
-const CheckoutHeader = () => {
+const CheckoutHeader = ({ cart }) => {
+  let totalQuantity = 0;
+
+  console.log(cart);
+
+  cart.forEach((cartItem) => {
+    totalQuantity += cartItem.quantity;
+  });
+
   return (
     <div className="checkout-header">
       <div className="header-content">
@@ -18,7 +26,7 @@ const CheckoutHeader = () => {
         <div className="checkout-header-middle-section">
           Checkout (
           <Link className="return-to-home-link" to="/">
-            3 items
+            {totalQuantity} items
           </Link>
           )
         </div>

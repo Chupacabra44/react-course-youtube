@@ -1,10 +1,14 @@
+import Header from "../components/Header";
 import notFound from "../assets/images/404.jpeg";
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ cart }) => {
   return (
-    <div className="notFound">
-      <img src={notFound} alt="Not Found" />
-    </div>
+    <>
+      <Header cart={cart} />
+      <div className="notFound">
+        <img src={notFound} alt="Not Found" />
+      </div>
+    </>
   );
 };
 
