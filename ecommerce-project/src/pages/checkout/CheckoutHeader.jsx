@@ -7,8 +7,6 @@ import checkoutLockIcon from "../../assets/images/icons/checkout-lock-icon.png";
 const CheckoutHeader = ({ cart }) => {
   let totalQuantity = 0;
 
-  console.log(cart);
-
   cart.forEach((cartItem) => {
     totalQuantity += cartItem.quantity;
   });
