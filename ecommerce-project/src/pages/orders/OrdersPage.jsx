@@ -5,7 +5,7 @@ import OrderHeader from "./OrderHeader";
 import OrderDetails from "./OrderDetails";
 import "./OrdersPage.css";
 
-const OrdersPage = ({ cart }) => {
+const OrdersPage = ({ cart, loadCart }) => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const fetchOrdersData = async () => {
@@ -29,7 +29,7 @@ const OrdersPage = ({ cart }) => {
             return (
               <div key={order.id} className="order-container">
                 <OrderHeader order={order} />
-                <OrderDetails order={order} />
+                <OrderDetails order={order} loadCart={loadCart} />
               </div>
             );
           })}
