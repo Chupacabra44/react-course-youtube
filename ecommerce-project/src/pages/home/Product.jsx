@@ -6,8 +6,6 @@ const Product = ({ product, loadCart }) => {
   const [quantity, setQuantity] = useState(1);
   const [showAdded, setShowAdded] = useState(false);
 
-  console.log(product);
-
   const addToCart = async () => {
     await axios.post("/api/cart-items", {
       productId: product.id,

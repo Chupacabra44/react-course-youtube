@@ -18,13 +18,6 @@ const OrderSummary = ({ deliveryOptions, cart, loadCart }) => {
             await loadCart();
           };
 
-          // const updateCartItem = async () => {
-          //   await axios.put(`/api/cart-items/${cartItem.productId}`, {
-          //     deliveryOptionId: deliveryOptions.id,
-          //   });
-          //   await loadCart();
-          // };
-
           return (
             <div key={cartItem.productId} className="cart-item-container">
               <DeliveryDate selectedDeliveryOption={selectedDeliveryOption} />
