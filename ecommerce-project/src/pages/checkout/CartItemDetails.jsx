@@ -1,6 +1,23 @@
+import axios from "axios";
+import { useState, useEffect } from "react";
 import { formatMoney } from "../../utils/money";
 
-const CartItemDetails = ({ cartItem, deleteCartItem }) => {
+const CartItemDetails = ({ cartItem, deleteCartItem, loadCart }) => {
+  const [isUpdatingQuantity, setIsUpdatingQuantity] = useState(false);
+  const [quantity, setQunatity] = useState(cartItem.quantity);
+
+  const updateQuantity = async () => {
+    if (isUpdatingQuantity) {
+      await axios.put(`/api/cart-items/${cartItem.productId}`, {
+        quantity: Number(quantity),
+      });
+      await loadCart();
+      setIsUpdatingQuantity(false);
+    } else {
+      setIsUpdatingQuantity(true);
+    }
+  };
+
   return (
     <>
       <img className="product-image" src={cartItem.product.image} />
@@ -13,9 +30,23 @@ const CartItemDetails = ({ cartItem, deleteCartItem }) => {
         <div className="product-quantity">
           <span>
             Quantity:{" "}
-            <span className="quantity-label">{cartItem.quantity}</span>
+            {isUpdatingQuantity ? (
+              <input
+                onChange={(event) => setQunatity(event.target.value)}
+                value={quantity}
+                type="text"
+                style={{ width: "50px" }}
+              />
+            ) : (
+              <span className="quantity-label">{cartItem.quantity}</span>
+            )}
           </span>
-          <span className="update-quantity-link link-primary">Update</span>
+          <span
+            onClick={updateQuantity}
+            className="update-quantity-link link-primary"
+          >
+            Update
+          </span>
           <span
             onClick={deleteCartItem}
             className="delete-quantity-link link-primary"

@@ -26,6 +26,7 @@ const OrderSummary = ({ deliveryOptions, cart, loadCart }) => {
                 <CartItemDetails
                   cartItem={cartItem}
                   deleteCartItem={deleteCartItem}
+                  loadCart={loadCart}
                 />
                 <DeliveryOptions
                   deliveryOptions={deliveryOptions}
