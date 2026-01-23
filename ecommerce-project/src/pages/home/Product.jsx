@@ -16,7 +16,7 @@ const Product = ({ product, loadCart }) => {
 
     setTimeout(() => {
       setShowAdded(false);
-    }, 1500);
+    }, 2000);
   };
 
   const selectQuantity = (event) => {
@@ -60,12 +60,10 @@ const Product = ({ product, loadCart }) => {
 
       <div className="product-spacer"></div>
 
-      {showAdded && (
-        <div className="added-to-cart">
-          <img src="images/icons/checkmark.png" />
-          Added
-        </div>
-      )}
+      <div className="added-to-cart" style={{ opacity: showAdded ? 1 : 0 }}>
+        <img src="images/icons/checkmark.png" />
+        Added
+      </div>
 
       <button onClick={addToCart} className="add-to-cart-button button-primary">
         Add to Cart
