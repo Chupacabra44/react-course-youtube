@@ -18,6 +18,19 @@ const CartItemDetails = ({ cartItem, deleteCartItem, loadCart }) => {
     }
   };
 
+  const updateQuantityInput = (event) => {
+    setQunatity(event.target.value);
+  };
+
+  const handleQuantityKeyDown = (event) => {
+    if (event.key === "Enter") {
+      updateQuantity();
+    } else if (event.key === "Escape") {
+      setQunatity(cartItem.quantity);
+      setIsUpdatingQuantity(false);
+    }
+  };
+
   return (
     <>
       <img className="product-image" src={cartItem.product.image} />
@@ -32,7 +45,8 @@ const CartItemDetails = ({ cartItem, deleteCartItem, loadCart }) => {
             Quantity:{" "}
             {isUpdatingQuantity ? (
               <input
-                onChange={(event) => setQunatity(event.target.value)}
+                onChange={updateQuantityInput}
+                onKeyDown={handleQuantityKeyDown}
                 value={quantity}
                 type="text"
                 style={{ width: "50px" }}
