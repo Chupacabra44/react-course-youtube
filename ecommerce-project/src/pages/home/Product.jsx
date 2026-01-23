@@ -70,7 +70,11 @@ const Product = ({ product, loadCart }) => {
         Added
       </div>
 
-      <button onClick={addToCart} className="add-to-cart-button button-primary">
+      <button
+        onClick={addToCart}
+        className="add-to-cart-button button-primary"
+        data-testid="add-to-cart-button"
+      >
         Add to Cart
       </button>
     </div>
