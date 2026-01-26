@@ -49,7 +49,11 @@ const Product = ({ product, loadCart }) => {
       <div className="product-price">{formatMoney(product.priceCents)}</div>
 
       <div className="product-quantity-container">
-        <select onChange={selectQuantity} value={quantity}>
+        <select
+          onChange={selectQuantity}
+          value={quantity}
+          data-testid="product-quantity-selector"
+        >
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
