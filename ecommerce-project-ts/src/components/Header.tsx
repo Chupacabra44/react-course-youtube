@@ -6,14 +6,22 @@ import searchIcon from "../assets/images/icons/search-icon.png";
 import ordersIcon from "../assets/images/icons/cart-icon.png";
 import "./Header.css";
 
-const Header = ({ cart }) => {
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliveryOptionId: string;
+  }[];
+}
+
+const Header = ({ cart }: HeaderProps) => {
   const [searchParams] = useSearchParams();
   const searchText = searchParams.get("search");
   const [search, setSearch] = useState(searchText || "");
 
   const navigate = useNavigate();
 
-  const updateSearchInput = (event) => {
+  const updateSearchInput = (event: any) => {
     setSearch(event.target.value);
   };
 
